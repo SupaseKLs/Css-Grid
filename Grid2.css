@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    /*block level grid ยาวเต็มจอ*/
+    /*inline-grid = inline levelgrid*/
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+                        "header header header header"
+                        "main   main   main   sidebar"
+                        "footer footer footer footer";
+    /* grid-column-gap: 10px; แนวตั้ง
+    grid-row-gap: 10px; แนวนอน */
+    grid-gap: 10px;
+    /* grid-gap: row column; */
+}
+
+header {
+    grid-area: header;
+    padding: 2rem;
+    background-color: skyblue;
+}
+
+section {
+    grid-area: main;
+    background-color: palevioletred;
+    height: 300px;
+    padding: 2rem;
+}
+
+aside {
+    grid-area: sidebar;
+    background-color: yellowgreen;
+    height: 300px;
+    padding: 2rem;
+}
+
+footer {
+    grid-area: footer;
+    padding: 2rem;
+    background-color: tomato;
+}
