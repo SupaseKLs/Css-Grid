@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: 15% 1fr 18%;
+    grid-template-rows: 80px 1fr 50px;
+    grid-template-areas: 
+                        "header header header"
+                        "nav section sidebar"
+                        "footer footer footer";
+    /*1fr 1fr 1fr 1fr*/
+    border: 1px solid black;
+    height: 100vh;
+    grid-gap: 5px;
+    /*Justify-items แนวนอน*/
+    /*align-items แนวตั้ง*/
+    /*align-content แนวตั้ง ต้องใช้กับpx*/
+    /*justify-content แนวนอน ต้องใช้กับpx*/
+}
+
+header {
+    background-color: skyblue;
+    grid-area: header;
+}
+
+nav {
+    background-color: lightgreen;
+    grid-area: nav;
+}
+
+section {
+    background-color: lightsalmon;
+    grid-area: section;
+}
+
+aside {
+    background-color: teal;
+    grid-area: sidebar;
+}
+
+footer {
+    background-color: orangered;
+    grid-area: footer;
+}
+
+header, nav, section, aside, footer {
+    padding: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 50px 2fr 1fr 50px;
+        grid-template-areas: "header"
+                            "nav"
+                            "section"
+                            "sidebar"
+                            "footer";
+    }
+}
